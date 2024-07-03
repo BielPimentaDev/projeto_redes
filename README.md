@@ -24,7 +24,7 @@ Esta aplicação consiste em duas partes principais:
 - **Admin**: Uma interface para realizar o sorteio e visualizar a quantidade de participantes conectados.
 - <img src="https://github.com/BielPimentaDev/projeto_redes/blob/main/images/Tela%20admin.jpeg" width=400 />
 - **Cliente**: Uma interface para os usuários se conectarem e participarem do sorteio. Quando o sorteio é realizado, a interface do cliente muda de cor e mostra informações que se referem a se o usuário ganhou ou perdeu.
-- <img src="https://github.com/BielPimentaDev/projeto_redes/blob/main/images/Tela%20usu2.jpeg)" width=400 />
+- <img src="https://github.com/BielPimentaDev/projeto_redes/blob/main/images/Tela%20usu2.jpeg" width=400 />
 - <img src="https://github.com/BielPimentaDev/projeto_redes/blob/main/images/Tela%20usu1.jpeg" width=400 />
 
 ## Tecnologias Utilizadas
