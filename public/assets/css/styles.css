@@ -1,92 +1,132 @@
 * {
-  font-family: Arial, sans-serif;
-  text-align: center;
+	font-family: Arial, sans-serif;
+	text-align: center;
 }
 
 body.main {
-  background-color: #252525;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
 }
 
 body.main > div,
 body.main > img {
-  margin-bottom: 5px;
+	margin-bottom: 5px;
 }
 
 button {
-  font-size: 1.5rem;
-  display: block;
+	font-size: 1.5rem;
+	display: block;
 }
 .message {
-  text-align: center;
-  font-size: 3rem;
-  font-weight: bold;
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 80%;
-  color: transparent;
-  transform: translateY(100%);
-  opacity: 0;
-  transition: color 0.5s ease, transform 0.5s ease, opacity 0.5s ease;
+	text-align: center;
+	font-size: 3rem;
+	font-weight: bold;
+	background-color: #ffffff;
+	padding: 20px;
+	border-radius: 15px;
+	box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+	max-width: 80%;
+	color: transparent;
+	transform: translateY(100%);
+	opacity: 0;
+	transition: color 0.5s ease, transform 0.5s ease, opacity 0.5s ease;
 }
 
 .show-message {
-  color: #000;
-  transform: translateY(0%);
-  opacity: 1;
+	color: #000;
+	transform: translateY(0%);
+	opacity: 1;
 }
 
 .hide-message {
-  color: transparent;
-  transform: translateY(100%);
-  opacity: 0;
+	color: transparent;
+	transform: translateY(100%);
+	opacity: 0;
 }
 
 img#logo {
-  width: 200px;
-  border: none;
-  transition: transform 0.5s ease-in-out;
+	width: 200px;
+	border: none;
+	transition: transform 0.5s ease-in-out;
 }
 
 .win {
-  background-color: #075c1b !important;
+	background-color: #075c1b !important;
 }
 
 .lose {
-  background-color: #5c0707 !important;
+	background-color: #5c0707 !important;
 }
 
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(1080deg);
-  }
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(1080deg);
+	}
 }
 
 .spin-animation {
-  animation: spin 4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+	animation: spin 4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
 @keyframes decelerate {
-  0% {
-    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  }
-  100% {
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    transform: rotate(0deg);
-  }
+	0% {
+		animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	}
+	100% {
+		animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+		transform: rotate(0deg);
+	}
 }
 
 .stop-spin {
-  animation: decelerate 1s forwards;
+	animation: decelerate 1s forwards;
+}
+
+.loader {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	position: relative;
+	animation: rotate 1s linear infinite;
+}
+.loader::before {
+	content: '';
+	box-sizing: border-box;
+	position: absolute;
+	inset: 0px;
+	border-radius: 50%;
+	border: 5px solid rgba(59 130 246);
+	animation: prixClipFix 2s linear infinite;
+}
+
+@keyframes rotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes prixClipFix {
+	0% {
+		clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+	}
+	25% {
+		clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+	}
+	50% {
+		clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+	}
+	75% {
+		clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+	}
+	100% {
+		clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+	}
 }

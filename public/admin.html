@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin - Sorteio Código Fonte TV</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<title>Admin - Sorteio UFF</title>
+		<link rel="stylesheet" href="public/assets/css/styles.css" />
+	</head>
 
-    <!-- Estilos -->
-    <link rel="stylesheet" href="public/assets/css/styles.css" />
-  </head>
+	<body class="flex flex-col items-center justify-center h-screen">
+		<main
+			class="max-w-[1700px] px-6 mx-auto flex flex-col justify-center items-center"
+		>
+			<h1 class="text-4xl text-center font-semibold mb-2 mt-12">
+				Projeto Aplicacao de Redes
+			</h1>
+			<p class="text-center font-medium text-gray-600 w-3/5 mx-auto">
+				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime magni
+				non error molestias accusantium, molestiae dicta, nulla incidunt. non
+				error molestias accusantium, molestiae
+			</p>
+			<img src="/public/assets/imgs/story-graduation.png" />
+		</main>
+		<div class="font-medium">
+			Participantes: <span id="clientCount">0</span>
+		</div>
 
-  <body class="main">
-    <!-- Cabeçalho / Logo -->
-    <header>
-      <a href="https://codft.me/cdftv"
-        ><img
-          id="logo"
-          src="public/assets/images/codigo-fonte-tv.png"
-          alt="Código Fonte TV"
-      /></a>
-    </header>
+		<div>
+			<button
+				id="draw"
+				class="bg-blue-500 text-white p-2 px-4 rounded-lg mt-12"
+			>
+				Realizar Sorteio
+			</button>
+		</div>
+		<div id="message" class="message"></div>
 
-    <!-- Contador de Participantes -->
-    <div>Participantes: <span id="clientCount">0</span></div>
+		<footer class="font-semibold text-gray-400 text-sm mt-48">
+			Criado por Gabriel Pimenta, Matheus Bastos e Lucas Bogado
+		</footer>
 
-    <!-- Botão de Sorteio -->
-    <div>
-      <button id="draw">Realizar Sorteio</button>
-    </div>
-
-    <!-- Mensagem de Confirmação -->
-    <div id="message" class="message"></div>
-
-    <!-- Scripts -->
-    <script src="public/js/config.js"></script>
-    <script src="public/js/admin.js"></script>
-  </body>
+		<!-- Scripts -->
+		<script src="public/js/config.js"></script>
+		<script src="public/js/admin.js"></script>
+	</body>
 </html>

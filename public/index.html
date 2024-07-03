@@ -1,27 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sorteio Código Fonte TV</title>
-    <!-- Estilos -->
-    <link rel="stylesheet" href="public/assets/css/styles.css" />
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<title>Sorteio uff</title>
+		<link rel="stylesheet" href="public/assets/css/styles.css" />
+	</head>
+	<body class="flex flex-col justify-center items-center py-6 h-screen">
+		<div id="waiting">
+			<h1 class="text-3xl font-bold mt-2 text-center">Aguardando...</h1>
+			<p class="text-center mt-2 font-medium text-gray-600 mx-auto">
+				Espere enquanto o sorteio ainda nao aconteceu...
+			</p>
+			<img
+				id="logo"
+				src="/public/assets/imgs/story-group.png"
+				alt=""
+				class="min-w-[350px] min-h-[200px] mt-4"
+			/>
+		</div>
 
-  <body class="main">
-    <!-- Logo -->
-    <a href="https://codft.me/cdftv"
-      ><img
-        id="logo"
-        src="public/assets/images/codigo-fonte-tv.png"
-        alt="Código Fonte TV"
-    /></a>
-
-    <!-- Mensagem -->
-    <div id="message" class="message"></div>
-
-    <!-- Scripts -->
-    <script src="public/js/config.js"></script>
-    <script src="public/js/client.js"></script>
-  </body>
+		<div id="loadDiv" class="flex-col justify-center items-center hidden">
+			<h1 class="text-3xl font-bold mt-2 text-center mb-12">
+				Gerando o resultado...
+			</h1>
+			<span id="spinner" class="loader"></span>
+		</div>
+		<div id="win" class="hidden">
+			<h1 class="text-3xl font-bold mb-2 mt-2 text-center">Parabens!</h1>
+			<p class="text-center font-medium mx-auto">Voce foi a pessoa sorteada!</p>
+			<img
+				src="/public/assets/imgs/story-celebration.png"
+				class="w-[350px] min-h-[100px] mt-4"
+			/>
+		</div>
+		<div id="loss" class="hidden">
+			<h1 class="text-3xl font-bold mb-2 mt-2 text-center">
+				Nao foi dessa vez...
+			</h1>
+			<p class="text-center font-medium mx-auto">
+				Voce nao foi a pessoa sorteada.
+			</p>
+			<img
+				src="/public/assets/imgs/story-loss.png"
+				class="w-[350px] min-h-[100px] mt-4"
+			/>
+		</div>
+		<div id="message" class="message"></div>
+		<script src="public/js/config.js"></script>
+		<script src="public/js/client.js"></script>
+	</body>
 </html>
